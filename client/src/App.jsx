@@ -1,20 +1,17 @@
-import React from 'react'
-import './App.css'
-import axios from 'axios'
+import { Outlet } from "react-router-dom";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
-  const name = "PRAVAS"
-  const hendleInputTest = async () => {
-
-    const posttest = await axios.post("/api/testapi", { name })
-
-    console.log(posttest)
-  }
   return (
-    <button onClick={hendleInputTest}>
-      Click Me
-    </button>
-  )
+    <>
+      <div className="m-10 mx-96 ">
+        <Nav />
+        <Outlet />
+        {/* <Footer /> */}
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
